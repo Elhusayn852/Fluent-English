@@ -9858,8 +9858,8 @@ function renderTab(tabId) {
               '<button class="md-outlined-button md-button-sm" onclick="FE.revealAllGP(' + gi + ')">Reveal Answers</button>' +
               "</div></div>";
           }
-          return '<div class="grammar-accordion open" onclick="FE.toggleGram(this)" role="button" tabindex="0" onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();FE.toggleGram(this)}">' +
-            '<div class="grammar-header"><span>' + esc(g.topic) + '</span><span class="arrow">&#9654;</span></div>' +
+          return '<div class="grammar-accordion open">' +
+            '<div class="grammar-header" onclick="FE.toggleGram(this)" role="button" tabindex="0" onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();FE.toggleGram(this)}"><span>' + esc(g.topic) + '</span><span class="arrow">&#9654;</span></div>' +
             '<div class="grammar-body"><div class="grammar-body-inner">' + body + "</div></div></div>";
         }).join("") +
         "</div>";
@@ -9994,7 +9994,7 @@ function markVocab(idx, diff) {
 }
 
 function toggleGram(el) {
-  el.classList.toggle("open");
+  el.parentElement.classList.toggle("open");
 }
 
 function switchTab(tab) {
