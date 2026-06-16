@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fdfbff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1a1b1f" media="(prefers-color-scheme: dark)">
+<title>Fluent English - Complete Course</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <div id="drawerScrim" class="md-scrim" onclick="FE.closeDrawer()" aria-hidden="true"></div>
+
+  <aside id="sidebar" class="md-navigation-drawer" role="navigation" aria-label="Lesson navigation">
+    <div class="drawer-header">
+      <div class="brand">
+        <span class="brand-icon"></span>
+        <div>
+          <div class="md-title-large brand-name">Fluent English</div>
+          <div class="md-body-small brand-subtitle">Complete Course</div>
+        </div>
+      </div>
+      <div class="md-search-bar">
+        <span class="search-icon"></span>
+        <input type="text" id="searchInput" placeholder="Search lessons..." aria-label="Search lessons">
+      </div>
+    </div>
+    <nav id="lessonList" class="drawer-list" aria-label="Lesson list"></nav>
+    <div class="drawer-footer">
+      <button id="reviewModeBtn" class="md-filled-tonal-button">Start Review Session</button>
+      <div class="md-label-small progress-summary" aria-live="polite">
+        <span id="completedCount">0</span>/<span id="totalCount">20</span> lessons
+      </div>
+    </div>
+  </aside>
+
+  <div id="main-area">
+    <header id="topAppBar" class="md-top-app-bar">
+      <button id="menuBtn" class="md-icon-button" aria-label="Toggle navigation menu">
+        <span aria-hidden="true">&#9776;</span>
+      </button>
+      <span id="appBarTitle" class="md-title-large app-bar-title">Fluent English</span>
+      <div class="app-bar-actions">
+        <button id="themeToggle" class="md-icon-button" aria-label="Toggle dark mode">
+          <span id="themeIcon" aria-hidden="true">&#9790;</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <div id="welcome" class="welcome-section">
+        <h1 class="md-display-small">Welcome to Fluent English</h1>
+        <p class="md-body-large welcome-text">Select a lesson from the sidebar to begin. Each lesson includes vocabulary, grammar, phrasal verbs, real English expressions, exercises, and cultural notes.</p>
+      </div>
+      <div id="lessonContent" style="display:none"></div>
+    </main>
+  </div>
+</div>
+
+<div id="reviewOverlay" class="md-dialog-overlay" role="dialog" aria-modal="true" aria-label="Review session" style="display:none">
+  <div class="md-dialog">
+    <div class="md-dialog-header">
+      <h2 class="md-title-large">Review Session</h2>
+      <button class="md-icon-button" onclick="FE.closeReview()" aria-label="Close review">
+        <span aria-hidden="true">&#10005;</span>
+      </button>
+    </div>
+    <div class="md-dialog-content" id="reviewContent"></div>
+  </div>
+</div>
+
+<div id="snackbar" class="md-snackbar" role="alert" aria-live="assertive" aria-hidden="true">
+  <span id="snackbarMessage" class="md-snackbar-label"></span>
+  <button id="snackbarAction" class="snackbar-action" style="display:none"></button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
